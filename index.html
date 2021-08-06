@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Georama:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Task3</title>
+</head>
+<body>
+    
+    <header class="header">
+        <h1 class="brand-logo">Log & Go</h1>
+    </header>
+    <main class="main-content">
+        <div class="data-container">
+            <h3 class="data-title">Before</h3>
+            <div class="data-name-contaner">
+                <p class="user-firstaname data-container-item">FirstName: <span class="data-container-item-value firstname-value"></span></p>
+                <p class="user-lastname data-container-item">LastName: <span class="data-container-item-valu lastname-value"></span></p>
+                <p class="user-age data-container-item">Age: <span class="data-container-item-value age-value"></span></p>
+            </div>
+            <div class="data-option-contaner">
+                <p class="member option">
+                    <span class="option-item">Member</span>
+                    <span class="option-item member-value"></span>
+                </p>
+                <p class="manager option">
+                    <span class="option-item">Manager</span>
+                    <span class="option-item manager-value"></span>
+                </p>
+                <p class="Admin option">
+                    <span class="option-item">Admin</span>
+                    <span class="option-item admin-value"></span>
+                </p>
+                <p class="Admin option">
+                    <span class="option-item">Favorite</span>
+                    <span class="option-item favorite-value"></span>
+                </p>
+               
+            </div>
+        </div>
+
+        <div class="data-container">
+            <h2 class="data-title">Change data</h2>
+            <form class="form">
+                <label class="label-input" for="firstname">Firstname</label>
+                    <input id="firstname" class="firstname-input input-change" type="text" name="firstname"  required>
+                <label for="lastname" class="label-input">Lastname</label>
+                    <input id="lastname" class="lastname-input input-change" type="text" name="lastname"  required>
+                <label for="age" class="label-input">Age</label>
+                    <input id="age" class="age-input input-change" type="number" name="lastname"  required>
+
+                <label for="member" class="label-input">member</label>
+                    <input id="member" class="input-change" type="checkbox" >
+                <label for="manager" class="label-input">manager</label>
+                    <input id="manager" class="input-change" type="checkbox" >
+                <label for="admin" class="label-input">admin</label>
+                    <input id="admin" class="input-change" type="checkbox" >
+                <label for="favorite" class="label-input">favorite</label>
+                    <input id="favorite" class="input-change" type="checkbox" >
+
+                <button class="btn btn-change">Change user data</button>
+            </form>
+        </div>
+
+
+        <div class="data-container">
+            <h3 class="data-title">After</h3>
+            <div class="data-name-contaner">
+                <p class="user-firstaname data-container-item">FirstName: <span class="data-container-item-value firstname-value-after"></span></p>
+                <p class="user-lastname data-container-item">LastName: <span class="data-container-item-valu lastname-value-after "></span></p>
+                <p class="user-age data-container-item">Age: <span class="data-container-item-value age-value-after"></span></p>
+            </div>
+            <div class="data-option-contaner">
+                <p class="member option">
+                    <span class="option-item">Member</span>
+                    <span class="option-item member-value-after"></span>
+                </p>
+                <p class="manager option">
+                    <span class="option-item">Manager</span>
+                    <span class="option-item manage-value-after"></span>
+                </p>
+                <p class="Admin option">
+                    <span class="option-item">Admin</span>
+                    <span class="option-item admin-value-after"></span>
+                </p>
+                <p class="Admin option">
+                    <span class="option-item">Favorite</span>
+                    <span class="option-item favorite-value-after"></span>
+                </p>
+               
+            </div>
+        </div>
+        
+
+    
+    </main>
+    <footer class="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>
