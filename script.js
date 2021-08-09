@@ -46,9 +46,18 @@ const managerInput = document.getElementById('manager');
 const adminInput = document.getElementById('admin');
 const favoriteInput = document.getElementById('favorite');
 
+//====================================================
+const member = document.querySelector('.member-after');
+const manager = document.querySelector('.manager-after');
+const admin = document.querySelector('.admin-after');
+const favorite = document.querySelector('.favorite-after');
+const smile = document.querySelector('.smile');
+console.log(smile);
+
 //=======================================================
 
 function changeSmile(el,bool){
+    el.style.display = 'block';
      el.innerHTML = bool?"&#x1F600;":"&#x1F641;";
 }
 changeSmile(memberValue,data.options.role.isMember);
@@ -73,6 +82,19 @@ function deepCopyRecursion(inObj){
 function setNewValue(el,value){
     el.textContent = value;
 }
+
+function showOption(el,value){
+    if(value){
+        el.style.display= 'block';
+    }else{
+        el.style.display = 'none';
+    }
+}
+function showSmile(el,...options){
+    let bool = options.some(opt => opt===true);
+    changeSmile(el,bool);
+}
+
 
 //===================================event listener
 
@@ -103,14 +125,25 @@ btnChange.addEventListener('click',(e)=>{
     setNewValue(firstNameAfter, newData.name.firstName);
     newData.name.lastName = lastNameInputValue;
     setNewValue(lastNameAfter, newData.name.lastName);
-    newData.options.isMember = memberInputValue;
-    changeSmile(memberAfter, newData.options.isMember);
-    newData.options.isManager = managerInputValue;
-    changeSmile(managerAfter, newData.options.isManager);
-    newData.options.isAdmin = adminInputValue;
-    changeSmile(adminAfter,newData.options.isAdmin);
-    newData.isFavorite = favoriteInputValue;
-    changeSmile(favoriteAfter,newData.isFavorite);    
+    newData.options.role.isMember = memberInputValue;
+   
+    // changeSmile(memberAfter, newData.options.isMember);
+    newData.options.role.isManager = managerInputValue;
+    // changeSmile(managerAfter, newData.options.isManager);
+    newData.options.role.isAdmin = adminInputValue;
+    // changeSmile(adminAfter,newData.options.isAdmin);
+    newData.options.isFavorite = favoriteInputValue;
+    // changeSmile(favoriteAfter,newData.isFavorite);
+    
+    const {age,options:{role:{isMember,isManager,isAdmin},isFavorite}} = newData;
+
+   
+    showOption(member,isMember);
+    showOption(manager,isManager);
+    showOption(admin,isAdmin);
+    showOption(favorite,isFavorite); 
+    showSmile(smile,isMember,isManager,isAdmin,isFavorite);
+       
 });
 
 
