@@ -105,11 +105,11 @@ btnChange.addEventListener('click',(e)=>{
 
     const newData = deepCopyRecursion(data);
 
-    const firstNameInputValue = firstNameInput.value;
+    const firstNameInputValue = firstNameInput.value||firstNameInput.value !=="" ? firstNameInput.value:data.name.firstName;
     
-    const lastNameInputValue = lastNameInput.value;
+    const lastNameInputValue = lastNameInput.value||lastNameInput.value !== ""?lastNameInput.value:data.name.lastName;
     
-    const ageInputValue = ageInput.value;
+    const ageInputValue = ageInput.value||ageInput.value!==""?ageInput.value:data.age;
 
     const memberInputValue = memberInput.checked;
     
@@ -141,10 +141,3 @@ btnChange.addEventListener('click',(e)=>{
     showOption(member,isMember);
     showOption(manager,isManager);
     showOption(admin,isAdmin);
-    showOption(favorite,isFavorite); 
-    showSmile(smile,isMember,isManager,isAdmin,isFavorite);
-       
-});
-
-
-
